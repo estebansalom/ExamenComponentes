@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"></meta>
+<meta http-equiv="Content-Type" content="text/html"></meta>
+<title>Workshops</title>
+</head>
+<body>
+Insertar:
+<form action="#" th:action="@{/insertar}" th:object="${workshop}" method="post">
+    <label for="name">Name</label>
+    <input type="text" th:field="*{name}" id="name">
+    <label for="objective">Objective</label>
+    <input type="text" th:field="*{objective}" id="objective">
+    <label for="author">Author</label>
+    <input type="text" th:field="*{author}" id="author">
+    <label for="category">Category</label>
+    <input type="text" th:field="*{category}" id="category">
+    <label for="keywords">Keywords</label>
+    <input type="text" th:field="*{keywords}" id="keywords">
+     <input type="submit" value="Add Workshop">
+</form>
+
+</body>
+</html>

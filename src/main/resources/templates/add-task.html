@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Add Task</title>
+</head>
+<body>
+	<div>
+		<h1 th:text="${entry.name}"></h1>
+		<h3>
+			<span th:text="${entry.author}">Author</span>
+		</h3>
+	</div>
+	<div>
+		<form action="#" th:action="@{/add-task}"
+			 th:object="${task}"
+			method="post">
+			<label for="name">Name</label> <input type="text" th:field="*{name}"
+				id="name"> <label for="description">Description</label> <input
+				type="text" th:field="*{description}" id="description"> <label
+				for="label">Label</label> <input type="text" th:field="*{label}"
+				id="label"> <label for="time">Time</label> <input 
+				type="text" th:field="*{time}" id="time">
+				<input
+				type="hidden" name="workshopId" id="workshopId" value="${entry.id}"  th:value="${entry.id}">
+				 <input
+				type="submit" value="Add Task">
+				
+		</form>
+	</div>
+</body>
+</html>
