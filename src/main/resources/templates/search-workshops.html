@@ -1,26 +1,24 @@
-<!doctype html>
-<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html>
 <head>
-<meta charset="utf-8"></meta>
-<meta http-equiv="Content-Type" content="text/html"></meta>
+<meta charset="ISO-8859-1">
 <title>Workshops</title>
 </head>
 <body>
 	<div>
-		<h1>Workshops</h1>
-				<form action="#" th:action="@{/search-workshops/}" th:object="${query}"
-					method="post">
-					<input name="text" id="text" th:field="*{text}"> 
-					<label for="type">Search By:</label>
-					<select name="type"
-						id="type" th:field="*{type}">
-						<option value=""></option>
-						<option value="keywords">Keywords</option>
-						<option value="author">Author</option>
-						<option  value="category">Category</option>
-						<input type="submit" value="Search">
-					</select>
-				</form>
+		<h1>Results</h1>
+		<form action="#" th:action="@{/search-workshops/}"
+			th:object="${query}" method="post">
+			<input name="text" id="text" th:field="*{text}"> <label
+				for="type">Search By:</label> <select name="type" id="type"
+				th:field="*{type}">
+				<option value=""></option>
+				<option value="keywords">Keywords</option>
+				<option value="author">Author</option>
+				<option value="category">Category</option>
+				<input type="submit" value="Search">
+			</select>
+		</form>
 		<ul>
 			<div th:each="entry : ${workshops}">
 				<li>
@@ -55,6 +53,7 @@
 			</div>
 		</ul>
 	</div>
+	<a th:href="@{/view-workshops}"> Back</a>
 	<a th:href="@{/}">Home</a>
 </body>
 </html>

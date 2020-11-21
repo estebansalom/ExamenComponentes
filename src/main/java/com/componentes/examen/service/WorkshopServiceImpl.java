@@ -28,9 +28,9 @@ public class WorkshopServiceImpl implements WorkshopService {
 	@Override
 	public void save(Workshop ws) {
 		repo.save(ws);
-		
+
 	}
-	
+
 	public Optional<Workshop> findById(Long id) {
 		return repo.findById(id);
 	}
@@ -39,16 +39,16 @@ public class WorkshopServiceImpl implements WorkshopService {
 	public Optional<Workshop> get(Long id) {
 		return Optional.ofNullable(repo.getOne(id));
 	}
-	
-	public List<Workshop> findByAuthorContaining(String author){
+
+	public List<Workshop> findByAuthorContaining(String author) {
 		return repo.findByAuthorContaining(author);
 	}
-	
-	public List<Workshop> findByKeywordsContaining(String keywords){
+
+	public List<Workshop> findByKeywordsContaining(String keywords) {
 		return repo.findByKeywordsContaining(keywords);
 	}
-	
-	public List<Workshop> findByCategoryContaining(String category){
+
+	public List<Workshop> findByCategoryContaining(String category) {
 		return repo.findByCategoryContaining(category);
 	}
 }

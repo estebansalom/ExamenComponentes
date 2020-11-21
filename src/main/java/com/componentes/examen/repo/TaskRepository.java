@@ -9,5 +9,6 @@ import com.componentes.examen.domain.Workshop;
 
 public interface TaskRepository extends JpaRepository<Task, Long> {
 	public void delete(Task task);
+
 	public List<Task> findAllByWorkshopId(Workshop workshop);
 }

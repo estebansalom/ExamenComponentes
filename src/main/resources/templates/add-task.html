@@ -20,13 +20,13 @@
 				type="text" th:field="*{description}" id="description"> <label
 				for="label">Label</label> <input type="text" th:field="*{label}"
 				id="label"> <label for="time">Time</label> <input 
-				type="text" th:field="*{time}" id="time">
+				type="time" th:field="*{time}" id="time">
 				<input
 				type="hidden" name="workshopId" id="workshopId" value="${entry.id}"  th:value="${entry.id}">
 				 <input
 				type="submit" value="Add Task">
-				
 		</form>
 	</div>
+	<a th:href="@{/view-workshops}"> Back</a>
 </body>
 </html>

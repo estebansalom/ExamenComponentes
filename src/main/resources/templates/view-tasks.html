@@ -2,25 +2,25 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Task List</title>
 </head>
 <body>
 	<div>
-		<h1>List of Tasks</h1>
+		<h1>Tasks</h1>
 		<ul>
 			<div th:each="entry : ${tasks}">
 				<li>
-					<h4>
-						<span th:text="${entry.name}">Name</span>
-					</h4>
+					<h2>
+						<span>Name:</span> <span th:text="${entry.name}">Name</span>
+					</h2>
 					<h3>
-						<span th:text="${entry.label}">Label</span>
+						<span>Label:</span> <span th:text="${entry.label}">Label</span>
 					</h3>
 					<h3>
-						<span th:text="${entry.time}">Time</span>
+						<span>Time:</span> <span th:text="${entry.time}">Time</span>
 					</h3>
 					<h3>
-						<span th:text="${entry.workshopId.name}">Workshop</span>
+						<span>Workshop:</span> <span th:text="${entry.workshopId.name}">Workshop</span>
 					</h3>
 					<td><a th:href="@{/delete-task/{id}(id=${entry.id})}">Remove
 							Task</a></td>
@@ -30,5 +30,6 @@
 			</div>
 		</ul>
 	</div>
+	<a th:href="@{/view-workshops}"> Back</a>
 </body>
 </html>

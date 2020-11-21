@@ -9,14 +9,13 @@ import org.springframework.stereotype.Service;
 import com.componentes.examen.domain.Task;
 import com.componentes.examen.domain.Workshop;
 import com.componentes.examen.repo.TaskRepository;
-import com.componentes.examen.repo.WorkshopRepository;
 
 @Service
 public class TaskServiceImpl implements TaskService {
 
 	@Autowired
 	TaskRepository repo;
-	
+
 	@Override
 	public void save(Task task) {
 		repo.save(task);
@@ -36,11 +35,11 @@ public class TaskServiceImpl implements TaskService {
 	public Optional<Task> findById(Long id) {
 		return repo.findById(id);
 	}
-	
+
 	@Override
 	public String delete(Task task) {
-	    repo.delete(task);
-	    return "index";
+		repo.delete(task);
+		return "index";
 	}
 
 	@Override

@@ -1,13 +1,11 @@
-<!doctype html>
-<html lang="en-US" xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html>
 <head>
-<meta charset="utf-8"></meta>
-<meta http-equiv="Content-Type" content="text/html"></meta>
-<title>Add Workshop</title>
+<meta charset="ISO-8859-1">
+<title>Edit Workshop</title>
 </head>
 <body>
-	Insertar:
-	<form action="#" th:action="@{/add-workshop}" th:object="${workshop}"
+	<form action="#" th:action="@{/edit-workshop}" th:object="${workshop}"
 		method="post">
 		<label for="name">Name</label> <input type="text" th:field="*{name}"
 			id="name"> <label for="objective">Objective</label> <input
@@ -25,10 +23,10 @@
 			<option value="Philosophy">Philosophy</option>
 			<option value="Painting">Painting</option>
 		</select> <label for="keywords">Keywords</label> <input type="text"
-			th:field="*{keywords}" id="keywords"> <input type="submit"
-			value="Add Workshop">
+			th:field="*{keywords}" id="keywords"> <input type="hidden"
+			name="id" id="id" value="${wkp.id}" th:value="${wkp.id}"> <input
+			type="submit" value="Add Workshop">
 	</form>
-
 </body>
 <a th:href="@{/}">Home</a>
 </html>

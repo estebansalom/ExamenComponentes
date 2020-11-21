@@ -8,9 +8,14 @@ import com.componentes.examen.domain.Workshop;
 
 public interface TaskService {
 	public void save(Task task);
+
 	public Optional<Task> get(Long id);
+
 	public List<Task> getAll();
-	public Optional<Task> findById(Long id) ;
+
+	public Optional<Task> findById(Long id);
+
 	public List<Task> findByWorkshopId(Workshop wkp);
+
 	public String delete(Task task);
 }
