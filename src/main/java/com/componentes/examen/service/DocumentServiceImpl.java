@@ -24,7 +24,11 @@ public class DocumentServiceImpl implements DocumentService {
 			mainDocumentPart.addStyledParagraphOfText("Title", wkp.getName());
 			mainDocumentPart.addParagraphOfText(wkp.getAuthor());
 			for (Task t : tasks) {
-				mainDocumentPart.addParagraphOfText(t.toString());
+				mainDocumentPart.addParagraphOfText("");
+				mainDocumentPart.addParagraphOfText(" - " + t.getName());
+				mainDocumentPart.addParagraphOfText(t.getLabel());
+				mainDocumentPart.addParagraphOfText(t.getTime());
+				mainDocumentPart.addParagraphOfText("");
 			}
 			File exportFile = new File(wkp.getName() + ".docx");
 			try {
